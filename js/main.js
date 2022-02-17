@@ -245,48 +245,48 @@ $(function () {
   // bar.animate(.85);
 
   // Contact form
-  // $(".art-input").keyup(function () {
-  //   if ($(this).val()) {
-  //     $(this).addClass("art-active");
-  //   } else {
-  //     $(this).removeClass("art-active");
-  //   }
-  // });
+  $(".art-input").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("art-active");
+    } else {
+      $(this).removeClass("art-active");
+    }
+  });
 
-  // $("#form").submit(function () {
-  //   $.ajax({
-  //     type: "POST",
-  //     url: "mail.php",
-  //     data: $(this).serialize(),
-  //   }).done(function () {
-  //     var tl = anime.timeline({
-  //       easing: "easeOutExpo",
-  //     });
+  $("#form").submit(function () {
+    $.ajax({
+      type: "POST",
+      url: "mail.php",
+      data: $(this).serialize(),
+    }).done(function () {
+      var tl = anime.timeline({
+        easing: "easeOutExpo",
+      });
 
-  //     tl.add({
-  //       targets: ".art-submit",
-  //       opacity: 0,
-  //       scale: 0.5,
-  //     }).add({
-  //       targets: ".art-success",
-  //       scale: 1,
-  //       height: "45px",
-  //     });
-  //   });
-  //   return false;
-  // });
+      tl.add({
+        targets: ".art-submit",
+        opacity: 0,
+        scale: 0.5,
+      }).add({
+        targets: ".art-success",
+        scale: 1,
+        height: "45px",
+      });
+    });
+    return false;
+  });
 
   // portfolio filter
-  // $(".art-filter a").on("click", function () {
-  //   $(".art-filter .art-current").removeClass("art-current");
-  //   $(this).addClass("art-current");
+  $(".art-filter a").on("click", function () {
+    $(".art-filter .art-current").removeClass("art-current");
+    $(this).addClass("art-current");
 
-  //   var selector = $(this).data("filter");
-  //   $(".art-grid").isotope({
-  //     filter: selector,
-  //   });
-  //   return false;
-  // });
+    var selector = $(this).data("filter");
+    $(".art-grid").isotope({
+      filter: selector,
+    });
+    return false;
+  });
 
   // masonry Grid
   $(".art-grid").isotope({
